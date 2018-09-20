@@ -1,22 +1,29 @@
-# Introduction
+# Введение
 
-Angular is much more than a framework. It's a whole platform for creating applications that can run not only on a browser, but anywhere. It gives you tools to advanced capabilities, such as easily creating dynamic components, routes definitions and much more.
+Angular - это нечто большее, чем просто фреймверк. Это целая платформа для создания приложений, которые могут работать
+не только в браузере, но и где угодно. Он предоставляет инструменты расширенных возможностей, такие как легкое создание
+динамических компонентов, определение маршрутов и многое другое.
 
 ![](.gitbook/assets/angular.png)
 
-In this tutorial you'll learn how to develop a basic application using Angular. You will get to know the building blocks to have a working application: modules, components and services. The Angular CLI will help you in the process in many ways and will simplify the development process.
+В этом туториале вы узнаете, как разработать базовое приложение с помощью Angular. Вы познакомитесь со строительными
+блоками, необходимыми для рабочего приложения: модули, компоненты и сервисы. Angular CLI поможет вам в этом процессе
+разными способами и упростит процесс разработки.
 
-By the end of this tutorial, you'll have a ready todo-list application, that shows a list of items and lets you add or delete items. You will even be able to change the title of an existing item.
+В конце этого туториала у вас будет готовое приложение todo-list, которое отображает список задач и позволяет добавлять
+или удалять задачи. Вы даже сможете изменить название существующей задачи.
 
-The list is saved in the browser's local storage. All the changes will remain even when you refresh the browser or even turn off your computer \(as long as you use the same browser on the same computer and not in private mode\).
+Список сохраняется в локальном хранилище браузера (local storage). Все изменения останутся при перезагрузке страницы
+браузера или даже после выключения компьютера \(пока вы используете тот же браузер на одном компьютере, а не в приватном режиме\).
 
-You will even publish the application on the Web, so that other could use it!
+Вы даже опубликуете приложение в интернете, чтобы другие могли его использовать!
 
-After completing this tutorial, we encourage you to continue developing the application and adding your personal touch.
+По завершении этого туториала мы рекомендуем продолжить разработку приложения и добавить ваши личные изменения.
 
-This tutorial is meant for beginners. As such it tries to address good practices, but due to its simplicity, it's not always possible.
+Этот туториал предназначен для начинающих. Как таковой он пытается использовать лучшие практики в разработке,
+но из-за его простоты это не всегда возможно.
 
-We really hope this tutorial will help you in your first stages of Web development using Angular!
+Мы очень надеемся, что этот туториал поможет вам на первых этапах разработки веб-приложений с помощью Angular!
 
-Enjoy!
+Удачи!
 

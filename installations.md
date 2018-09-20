@@ -1,60 +1,86 @@
-# Installations
+# Установка
 
-Although it is possible to develop web applications with a simple text editor alone, the available tools make developing easier and enjoyable. We'll need a browser to see the result, NodeJS to run scripts on our computer, and NPM to easily fetch libraries from the web. With NPM we'll install the Angular CLI, which will run a script with NodeJS to create a starter project for us, and use NPM to fetch the libraries we'll need for the project \(such as Angular\). An IDE will help us write the code and manage the project.
+Несмотря на то, что можно создавать веб-приложения с
+помощью простого текстового редактора, доступные инструменты
+делают разработку более легкой и приятной. Нам понадобится
+браузер, чтобы увидеть результат, NodeJS для запуска
+скриптов на нашем компьютере и NPM, чтобы легко устанавливать
+библиотеки из интернета. С помощью NPM мы установим Angular CLI,
+который будет запускать скрипт для создания стартового проекта, а также 
+извлекать библиотеки из NPM, которые нам
+понадобятся для проекта \(таких как Angular\). IDE поможет нам
+в написании кода и управлении проектом.
 
-In Addition, Git is recommended to manage versions of your code, and GitHub to publish and share it.
+В дополнение, Git рекомендуется для управления
+версиями вашего кода, а GitHub - для его публикации и распространения.
 
-## Browser
+## Браузер
 
-Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just click the relevant link and follow the instructions to download and install the browser of your choice.
+Наш первый инструмент - это **браузер**. Мы будем использовать его для того, чтобы увидеть результаты нашей
+работы и для отладки кода. Мы рекоммендуем использовать [Google Chrome](https://www.google.com/chrome/browser/desktop/) - он
+отлично подходит для разработчиков. [Firefox](https://www.mozilla.org/en-US/firefox/new/) также является хорошим браузер.
+Если у вас еще нет одного из этих двух браузеров, то просто перейдите по нужной ссылке и следуя инструкциям,
+установите один из браузеров.
 
 ## IDE
 
-Our next tool is the **IDE** , or integrated development environment. It's software that helps you write the code. IDEs can do a lot of amazing things, such as:
+Наш следующий инструмент - это **IDE** , или интегрированная среда разработки \(integrated development environment\).
+Это программное обеспечение, которое поможет вам написать код. IDE могут делать много удивительных вещей, таких как:
 
-* highlight the code so it's easier to identify expressions
-* suggest completions to what you type
-* help you navigate easily through the files in your project
-* and a lot more...
+* выделять код, чтобы было легче идентифицировать выражения
+* предлагать дополнение того, что вы вводите
+* помочь вам легко перемещаться по файлам в вашем проекте 
+* и многое другого...
 
-JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) is one of the strongest IDE's in the market. You get the first month for free, and a totally free license if you're a student.
+JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) это одна из лучших сред разработки на рынке.
+В течении первого месяца вы можете использовать ее бесплатно, а также получить совершенно бесплатную лицензию,
+если вы студент.
 
-Microsoft [Visual Studio Code](https://code.visualstudio.com/) is also a great choice that's gained a lot of popularity lately. It is completely free for individuals.
+Microsoft [Visual Studio Code](https://code.visualstudio.com/) также является отличным выбором, который в последнее
+время приобрел большую популярность. Эта IDE абсолютна бесплатна для личного использования.
 
-Choose the IDE you'd like to work with and follow the installation instructions in its website.
+Выберите IDE, с которой вы хотите работать, и следуйте инструкциям по установке на нужном веб-сайте.
 
-### **Plugins**
+### **Плагины**
 
-Plugins help the IDE understand the code. Webstorm ships with the necessary plugins. If you choose to use VS Code, we recommend to install following Plugins for Angular:
+Плагины помогают IDE понять код. Webstorm поставляется с необходимыми плагинами.
+Если вы решите использовать VS Code, то мы рекомендуем установить следующие плагины для Angular:
 
 * [Angular.ng-template](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
 * [natewallace.angular2-inline](https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline)
 
 ![VS Code Plugins for Angular](https://github.com/ng-girls/todo-list-tutorial/raw/master/assets/VS-Code-Plugins.png)
 
-## NodeJS and NPM
+## NodeJS и NPM
 
-**Please check the **[**Angular CLI docs**](https://github.com/angular/angular-cli#prerequisites)** for the up-to-date prerequisites \(NodeJS and NPM versions\)!**
+**Пожалуйста проверьте **[**Angular CLI docs**](https://github.com/angular/angular-cli#prerequisites)** для использования
+нужных версий NodeJS и NPM!**
 
-Another tool which most web developers are using is **NodeJS**. Once installed, it comes with another tool called **NPM** \(Node Package Manager\).
+Другим инструментом, который использует большинство веб-разработчиков, является **NodeJS**. После установки он
+поставляется с другим инструментом, называемым **NPM** \(Node Package Manager\).
 
-NodeJS lets you run JavaScript code on your computer. It is used to run a local server which serves the project files to the browser and simulates a real running website.
+NodeJS позволяет запускать JavaScript код прямо на вашем компьютере.
+Он используется для запуска локального сервера, который использует файлы проекта в браузере и имитирует реальный веб-сайт.
 
-NPM allows you to easily download and install different libraries from the internet and manage their versions.
+NPM позволяет вам легко загружать и устанавливать различные библиотеки из интернета и управлять их версиями.
 
-**Download NodeJS **[**here**](https://nodejs.org/en/)**.**
+**Инструкция по установке NodeJS находится по **[**ссылке**](https://nodejs.org/en/)**.**
 
-If you already have NodeJS installed, make sure you check that the version matches the prerequisites by running this in your command line / terminal:
+Если у вас уже установлен NodeJS, убедитесь, что вы проверили, соответствует ли эта версия необходимым условиям,
+запустив в командной строке / терминале команду:
 
 ```text
 node -v
 ```
 
-\('-v' stands for 'version'.\)
+\('-v' означает 'version'.\)
 
-If it's lower than required, you need to be careful installing a new version, since you might have projects that rely on the version you have. Use Node Version Manager \(NVM\) to install the required version. Check this [Stack Overflow question](https://stackoverflow.com/questions/8191459/how-do-i-update-node-js) to learn how.
+Если версия ниже требуемой, то вам нужно быть осторожным при установке новой версии, поскольку у вас могут быть проекты,
+которые зависят от той версии, которая уже у вас установлена. Используйте Node Version Manager \(NVM \) для установки
+необходимой версии. Здесь вы можете увидеть инструкцию, как это
+сделать [Stack Overflow question](https://stackoverflow.com/questions/8191459/how-do-i-update-node-js).
 
-Once installed, you should also have NPM installed. Check its version by running:
+После установки вы также должны установить NPM. Проверьте его версию, запустив:
 
 ```text
 npm -v
@@ -62,67 +88,87 @@ npm -v
 
 ## Git
 
-Git is a tool that helps you manage versions of your code and work in collaboration with team members. There is a lot to know about it, but in this tutorial we will cover only basic usage.
+Git это инструмент, который помогает вам управлять версиями вашего кода и работать в сотрудничестве с членами команды.
+Существует много информации об этом, но в данном туториале мы рассмотрим только базовое использование.
 
-You can download it and follow the installation instructions [here](https://git-scm.com/) .  
-When asked if you'd like to install **git bash**, say yes.
+Вы можете загрузить его и следовать инструкции по установке на данном [сайте](https://git-scm.com/) .  
+Когда вас спросят, хотите ли вы установить **git bash**, используйте ответ **yes**.
 
 ## GitHub
 
-[GitHub](https://github.com/) is a code repository website, which integrates with Git. It allows you to publish your project on the Web, copy \(fork and clone\) other open source projects and collaborate. To be able to publish your project, make sure you create a user on GitHub \(for free, of course\).
+[GitHub](https://github.com/) это сайт репозитория кода, который интегрируется с Git.
+Он позволяет публиковать ваш проект в интернете, копировать \(fork и clone \) другие проекты с открытым исходным
+кодом и сотрудничать. Чтобы иметь возможность опубликовать свой проект, убедитесь, что вы создали пользователя в
+GitHub \(бесплатно, конечно).
 
 ## Angular CLI
 
-The [Angular CLI](https://github.com/angular/angular-cli) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. Install it by running:
+[Angular CLI](https://github.com/angular/angular-cli) является мощным инструментом, который упрощает процесс разработки.
+Он также устанавливает библиотеки, которые вы можете использовать в своих текущих и будущих проектах. Установите его, запустив:
 
 ```text
 npm i -g @angular/cli
 ```
+Эта команда запускает NPM, который мы недавно установили, - он знает, где найти пакет \(angular-cli \),
+который вы ищете, используя название пакета, которое вы используете в команде. параметр 'i' - это сокращенная форма 'install'.
+Параметр '-g' означает слово "global' - мы хотели бы, чтобы этот инструмент был глобально установлен на компьютер,
+чтобы мы могли использовать его из любой папки для создания любых будущих проектов.
 
-This command runs the NPM we recently installed here - it knows where to find the package \(angular-cli\) you're looking for by the name of the package you provide. the 'i' parameter, is a short form of 'install'. the '-g' parameter, stands for the word 'global' - we'd like to have this tool globally installed on the computer, so that we could use it from any folder to create any future projects.
+Подробнее об Angular CLI читайте в следующем разделе.
 
-Read more about the Angular CLI in the following section.
+### Создание проекта
 
-### Creating a Project
-
-First, create a folder to store all your projects, for example _myProjects_, and then go into the folder, using a terminal \(command line window\):
+Сначала создайте папку для хранения всех ваших
+проектов, например _myProjects_, а затем
+зайдите в эту папку, используя терминал \(окно командной строки\):
 
 ```text
 cd the-path-to-your-folder/myProjects
 ```
-
-Now, create a new project, called _todo-list_ inside the projects folder, using the Angular CLI, by running the following command:
+Теперь создайте новый проект под названием _todo-list_
+внутри папки проектов, используя Angular CLI,
+выполнив следующую команду:
 
 ```text
 ng new todo-list
 ```
 
-This can take a while, since many packages are being downloaded from the web and installed.
+Это может занять некоторое время, поскольку многие
+пакеты загружаются из интернета и устанавливаются.
 
-Now enter the new folder that the Angular CLI created for this project:
+Теперь войдите в новую папку, которая была
+создана для этого проекта:
 
 ```text
 cd todo-list
 ```
 
-Once inside the folder of the application, run the application by using the following command:
+Находясь внутри папки приложения, запустите его,
+используя следующую команду:
 
 ```text
 ng serve -o
 ```
 
-The flag `-o` is a short for `--open`, which will open your browser in the right URL: [`localhost:4200`](http://localhost:4200)
+Флаг `-o` является сокращением для` --open`. При его использовании
+ваш браузер откроется с таким
+адресом: [`localhost:4200`](http://localhost:4200)
 
-You should see the page like this:
+Вы должны увидеть такую страницу:
 
 ![Initial App](https://github.com/ng-girls/todo-list-tutorial/raw/master/assets/initial-app.png)
 
-## Congratulations!
+## Поздравляем!
 
-You have a running Angular application! **As long as you're working on the application you should keep the terminal where you run it open.** Any change you make in the project code will be reflected immediately in the web browser.  
-You can open another terminal to perform tasks in parallel.
+Теперь у вас есть работающее Angular приложение!
+**Пока вы работаете над приложением, терминал,
+в котором вы его запускаете, должен оставаться открытым.**
+Любые изменения, внесенные вами в код проекта, будут
+сразу же отображены в браузере. Также вы можете
+открыть другой терминал для выполнения задач
+параллельно.
 
-To stop the app from running, press `Ctrl+C` in the terminal, or close the terminal.
+Чтобы остановить работающее приложения,
+нажмите `Ctrl+C` в терминале или закройте терминал.
 
-Now we're ready to start developing!
-
+Теперь мы готовы начать разработку!
