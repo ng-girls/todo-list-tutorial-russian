@@ -1,10 +1,10 @@
-# Property binding
+# Привязка свойств
 
-We now have our input-button-unit component, but it does not do much. We want to bring it to life.
+Теперь у нас есть компонент input-button-unit, но он практически ничего не делает. Давайте это исправим.
 
-Let's add an HTML input element and make its control text reflect the value of the `title` property.
+Мы добавим элемент текстового ввода HTML input и сделаем так, чтобы введенный туда текст менял значение свойства `title`.
 
-We'll revert the component to its state before our experiments with its methods:
+Для начала вернем компонент в его изначальное состояние до наших экспериментов с его методами:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -33,7 +33,7 @@ export class InputButtonUnitComponent implements OnInit {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Let's add an input element and a button to the template:
+Добавьте элементы input и button в шаблон:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -51,11 +51,11 @@ template: `
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Reminder: We use interpolation to present the value of the `title` property: `{{ title }}`. Angular then presents the value of `title` each time that our `app-input-button-unit` component is shown.
+Напоминание: Мы используем интерполяцию для отображения значения свойства `title`: `{{title}}`. Angular использует значение `title` каждый раз, когда отображается наш компонент` app-input-button-unit`.
 
-What if we want to show the title value inside the HTML input control itself?
+Что если мы хотим показать значение `title` внутри элемента ввода?
 
-Every `input` element has a property called `value`, which holds the string that is displayed inside the `input` box. In HTML, we can pass a string directly to the element's `value` attribute:
+Каждый элемент `input` имеет свойство под названием `value`, которое содержит строку, отображаемую внутри поля `input`. В HTML мы можем передать строку непосредственно в атрибут `value` элемента:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -65,9 +65,9 @@ Every `input` element has a property called `value`, which holds the string that
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-But we lose the dynamic binding between the properties in the controller and the template.
+Но в таком случае мы теряем динамическую привязку данных между контроллером и шаблоном.
 
-Angular lets us bind properties to the template easily and conveniently; we saw that with interpolation. Now we'll see how to bind to an **element's property** \(not to be confused with class properties\). **We surround the wanted property with square brackets and pass it the class member**:
+Angular позволяет легко и удобно связывать свойства с шаблоном. Мы уже видели как это происходит при интерполяции. Теперь мы увидим, как привязать **свойство элемента** \(не путать со свойствами класса\). **Мы окружаем соответсвующее свойство квадратными скобками и передаем его члену класса**:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -77,13 +77,13 @@ Angular lets us bind properties to the template easily and conveniently; we saw 
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Try this out and see the result in the browser!
+Попробуйте и посмотрите результат в браузере!
 
-## Binding to Methods
+## Привязка к методам
 
-The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid JavaScript expression.
+Выражения, которые мы можем присвязать к шаблону, не ограничиваются свойствами класса. Они могут быть вызовом метода или почти любым другим допустимым выражением JavaScript.
 
-![lab-icon](.gitbook/assets/lab%20%281%29.jpg) **Playground**: For example, let's bind the input value to a method call that returns a value. First, let's add the method `generateTitle` anywhere inside the class, but not inside any of its methods.
+![lab-icon](.gitbook/assets/lab%20%281%29.jpg) **Playground**: Например, давайте свяжем значение input с вызовом метода, который возвращает значение. Во-первых, давайте добавим метод `generateTitle` где угодно внутри класса, только не внутри его методов.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -95,7 +95,7 @@ generateTitle(): string {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Replace one or both of the bindings of the title in the template with the method call \(don't forget the parenthesis!\):
+Замените одну или обе привязки title в шаблоне вызовом метода \(не забудьте скобки!\):
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -107,11 +107,11 @@ Replace one or both of the bindings of the title in the template with the method
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Change Detection
+## Обнаружение изменений
 
-Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
+В Angular есть очень эффективный механизм обнаружения изменений - Change Detection. Он ищет привязки в шаблонах компонентов, а затем обновляет значение при каждом изменении привязанного выражения.
 
-![lab-icon](.gitbook/assets/lab%20%281%29.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
+![lab-icon](.gitbook/assets/lab%20%281%29.jpg) **Playground**: Чтобы продемонстрировать это, давайте изменим значение заголовка через несколько секунд и посмотрим, что произойдет. Для этого вызовем функцию `setTimeout` внутри` ngOnInit`:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -125,19 +125,19 @@ ngOnInit() {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-`setTimeout` is a JavaScript function. Its first parameter is what we want to happen - a function of our choice. The second parameter is how much we want to delay it, in milliseconds. In this example, we pass an **inline anonymous function** which sets the value of `this.title`. For this we use one of the new features in JavaScript ES6: an **arrow function**.
+`setTimeout` - это функция JavaScript. Ее первый параметр - это то, что мы хотим, чтобы выполнилось - функция по нашему выбору. Второй параметр - это то, насколько мы хотим задержать ее выполнение в миллисекундах. В этом примере мы передаем **встроенную анонимную функцию**, которая устанавливает значение `this.title`. Для этого мы используем одну из новых функций в JavaScript ES6: **стрелочную функицю**.
 
-## Binding to Methods
+## Привязка к методам
 
-The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid Angular template expression.
+Выражения, которые мы можем привязать к шаблону, не ограничиваются свойствами класса. Они могут быть вызовом метода или почти любым другим допустимым шаблонным выражением Angular.
 
-## Resources
+## Материалы для изучения
 
-[Angular Guide - Template Property Binding](https://angular.io/guide/template-syntax#property-binding--property-)
+[Руководство по Angular - Привязка свойств](https://angular.io/guide/template-syntax#property-binding--property-)
 
-## A note about accessing the DOM
+## Замечание по прямому доступу к DOM
 
-Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
+Используя обычный JavaScript, мы можем вставить значение в элемент input через его свойства. Для этого нужно извлечь элемент из DOM и присвоить значение `title` свойству `value`.
 
 {% code-tabs %}
 {% code-tabs-item title="code for example" %}
@@ -148,7 +148,7 @@ inputElement.value = this.title;
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-In JavaScript, we find the `input` element in the DOM by its id, and then set its `value` property to the value of the title property. We need to add the id to the `input` element then:
+В JavaScript мы находим элемент `input` в DOM по его идентификатору, а затем устанавливаем его свойство `value` в значение свойства title. Поэтому нам нужно добавить идентификатор id=`my-input` к элементу `input`:
 
 {% code-tabs %}
 {% code-tabs-item title="code for example" %}
@@ -158,7 +158,7 @@ In JavaScript, we find the `input` element in the DOM by its id, and then set it
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This will work in the browser.
+Это будет работать в браузере.
 
-However, **this is highly discouraged in Angular. You should never access the DOM directly!** That's because you can assign different renderers to Angular and run the application on different platforms. They may be renderers for mobile, desktop, or even a robot. These platforms will not have a `document` object from which you can manipulate the result!
+Однако, **так делать в Angular не стоит. Вы никогда не должны обращаться к DOM напрямую!** Это объясняется тем, что вы можете назначать разные рендеры для Angular и запускать приложение на разных платформах. Они могут быть визуализаторами для мобильных устройств, компьютеров или даже роботов. На этих платформах не будет объекта `document`, при помощи которого вы можете манипулировать результатом!
 

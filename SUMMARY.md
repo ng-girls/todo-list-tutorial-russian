@@ -7,7 +7,7 @@
 * [Компонент](component.md)
 * [Новый компонент](a-new-component.md)
 * [Класс](class.md)
-* [Свойство binding](property-binding.md)
+* [Привязка свойств](property-binding.md)
 * [Event binding](event-binding.md)
 * [Element ref - \#](element-ref.md)
 * [Список задач](the-to-do-list.md)
