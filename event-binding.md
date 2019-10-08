@@ -1,10 +1,10 @@
-# Event binding
+# Привязка событий
 
-We want our application to react to the user's actions. We want to update the title of the todo item whenever the user changes it, or to add a new item when the user presses the Save button or the Enter key.
+Мы хотим, чтобы наше приложение реагировало определенным образом на определенные действия пользователя. Далее в этом туториале мы создадим возможность переименовывать элементы списка и добавлять новые по клику на кнопку `Save` или клавишу `Enter`.
 
-We still don't have a whole list to show, but at the moment we will use another way to test the action. We will change it to the right functionality later on.
+Пока у нас еще списка нет, поэтому мы будем использовать другой способ продемонстрировать как это работает. А позже мы заменим его на нужное действие.
 
-The `input-button-unit` component should look like this:
+Компонент `input-button-unit` сейчас должен выглядеть так:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -18,16 +18,16 @@ import { Component, OnInit } from '@angular/core';
       input-button-unit works!
       The title is: {{ title }}
     </p>
-    
+
     <input [value]="title">
     <button>Save</button>
-  `,  
-  styleUrls: ['./input-button-unit.component.css']  
-})    
+  `,
+  styleUrls: ['./input-button-unit.component.css']
+})
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World';           
+  title = 'Hello World';
 
-  constructor() { }                     
+  constructor() { }
 
   ngOnInit() {
   }
@@ -36,9 +36,9 @@ export class InputButtonUnitComponent implements OnInit {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## The Action
+## Метод
 
-First, let's implement `changeTitle`. It will receive the new title as its argument. The best practice is to have our custom methods written after the lifecycle methods \(`ngOnInit` in this case\):
+Для начала, давайте реализуем метод `changeTitle`. В качестве аргумента он будет принимать новый заголовок. Удобнее всего наши собственные методы расположить после методов жизненного цикла компонента \(в данном случае `ngOnInit`\):
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -50,11 +50,11 @@ changeTitle(newTitle: string) {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Binding to Events
+## Привязка событий
 
-Just like binding to element properties, we can bind to events that are emitted by the elements. Again, Angular gives us an easy way to do this. **You just wrap the name of the event with parenthesis, and pass it the method that should be executed when the event is emitted**.
+Так же, как и в случае привязки значений к свойствами элементов, мы можем привязать и действия к событиям, производимым элементами. Опять же, в Angular это делается довольно просто. **Вы заключаете имя события в круглые скобки и передаете ему метод, который должен быть выполнен при отправке события**.
 
-Let's try a simple example, where the title is changed when the user clicks on the button. Notice the parenthesis around `click`. \(We also change the binding of the input's value back to `title`.\)
+Давайте попробуем реализовать простой пример: сделаем так, чтобы заголовок изменился по клику на кнопку. Обратите внимание на круглые скобки вокруг события `click`. \(Мы также изменяем привязку значения элемента ввода input обратно на `title`.\)
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -64,7 +64,7 @@ template: `
     input-button-unit works!
     The title is: {{ title }}
   </p>
-  
+
   <input [value]="title">
   <button (click)="changeTitle('Button Clicked!')">
     Save
@@ -74,20 +74,20 @@ template: `
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-> The event is called `click` and not `onClick` - in Angular you remove the `on` prefix from the events in the elements.
+> Обратите внимание, что событие называется `click`, а не` onClick` - в Angular вы удаляете префикс `on` из названий событий в html элементах.
 
-Go to the browser and see the result - click on the Save button.
+Зайдите в браузер и протестируйте результат - после клика на кнопку Save заголовок должен обновиться.
 
-## Event Data
+## Данные события
 
-We pass a static string to the method call: `Button Clicked!'` But we want to pass the value that the user typed in the input box!
+На данном этапе мы всегда передаем статическую строку в вызов метода: `'Button Clicked!'` Но наша цель передать значение, введенное пользователем в поле ввода!
 
-In the next chapter we will learn how to use properties of one element in another element in the same template. Then we'll be able to complete the implementation of the click event of the `Save` button.  
-But now we'll bind a method to an event on the input element: when the user clicks Enter, the method `changeTitle` will be called.
+В следующей главе мы узнаем, как использовать свойства одного элемента в другом элементе внутри одного шаблона. Это позволит нам завершить реализацию события `click` кнопки `Save`.
+А пока мы привяжем тот же метод к еще одному событию: нажатию клавиши `Enter`.
 
-### 'keyup' event
+### Событие 'keyup'
 
-When the user types, keyboard events are emitted. For example `keydown` and `keyup`. We will catch the `keyup` event \(when the pressed key is released\) and change the title:
+Когда пользователь печатает, производятся события клавиатуры, такие как `keydown` и `keyup`. Сейчас мы будем ловить событие `keyup` \(когда отпущена нажатая клавиша\) и менять заголовок:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
@@ -97,44 +97,44 @@ When the user types, keyboard events are emitted. For example `keydown` and `key
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Now when the user types in the input box, the title is changed to "Button Clicked!". But it's still a static string.
+Теперь, когда пользователь печатает в поле ввода, заголовок меняется на `'Button Clicked!'`. Но это все еще статическая строка.
 
-**Tip:** When an element becomes long due to its attributes, you should make it easier on the eye by splitting it into several lines:
+**Совет:** Когда элемент становится слишком длинным из-за большого количества атрибутов, для восприятия гораздо лучше разделить его на несколько строк:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
-<input [value]="title" 
+<input [value]="title"
        (keyup)="changeTitle('Button Clicked!')">
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### The $event object
+### Объект $event
 
-Now we just react when the `keyup` event occurs. Angular allows us to get the event object itself. It is passed to the event binding as `$event` - so we can use it when we call `changeTitle()`.
+На данном этапе мы просто реагируем на любое событие `keyup`. Но Angular позволяет нам получить сам объект события. Он передается привязке как `$event` и мы можем использовать этот объект при вызове `changeTitle()`.
 
-The event object emitted on `keyup` events has a reference to the element that emitted the event - the input element. The reference is kept in the event's property `target`. As we've seen before, the input element has a property `value` which holds the current string that's in the input box. We can pass `$event.target.value` to the method:
+Объект, производимый в событиях типа `keyup`, содержит ссылку на элемент, который произвел его - элемент `input`. Ссылка хранится в свойстве `target`. Как мы уже видели, элемент input имеет свойство `value`, которое содержит текущую строку, находящуюся в поле ввода. Таким образом мы можем передать `$event.target.value` методу:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
-<input [value]="title" 
+<input [value]="title"
        (keyup)="changeTitle($event.target.value)">
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Check it out in the browser. Now with every key stroke, you can see the title changes and reflects the input value.
+Посмотрите как это работает в браузере. Теперь при каждом нажатии клавиши вы можете видеть как заголовок меняется на введенное значение.
 
-### Pressing the Enter key
+### Нажатие клавиши Enter
 
 You can limit the change to only a special key stroke, in our case it's the Enter key. Angular makes it really easy for us. The `keyup` event has properties which are more specific events. So just add the name of the key you'd like to listen to - `keyup.enter`:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
-<input [value]="title" 
+<input [value]="title"
        (keyup.enter)="changeTitle($event.target.value)">
 ```
 {% endcode-tabs-item %}
@@ -164,7 +164,7 @@ Now change the argument you're passing in the template, to pass the whole `$even
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
-<input [value]="title" 
+<input [value]="title"
        (keyup.enter)="changeTitle($event)">
 ```
 {% endcode-tabs-item %}
@@ -198,24 +198,24 @@ import { Component, OnInit } from '@angular/core';
       input-button-unit works!
       The title is: {{ title }}
     </p>
-    
-    <input [value]="title" 
+
+    <input [value]="title"
            (keyup.enter)="changeTitle($event.target.value)">
-       
+
     <button (click)="changeTitle('Button Clicked!')">
       Save
     </button>
-  `,  
-  styleUrls: ['./input-button-unit.component.css']  
-})    
+  `,
+  styleUrls: ['./input-button-unit.component.css']
+})
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World';           
+  title = 'Hello World';
 
-  constructor() { }                     
+  constructor() { }
 
   ngOnInit() {
   }
-  
+
   changeTitle(newTitle: string) {
     this.title = newTitle;
   }
